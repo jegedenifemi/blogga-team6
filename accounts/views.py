@@ -76,7 +76,9 @@ def _sign_up(request):
             
             
         else:
-            form = CreateUserForm
+            # form = CreateUserForm
+            # messages.error(request, "Username or Password is incorrect")
+            messages.error(request,'Please enter valid credentials')
         context = {'form': form}
         return render(request, 'accounts/signup_john.html', context)
 
@@ -112,7 +114,7 @@ def _log_in(request):
                 login(request, user)
                 return redirect('post:index')
             else:
-                messages.info(request, "Username or Password is incorrect")
+                messages.error(request, "Username or Password is incorrect")
     
     context ={}
 
@@ -194,7 +196,7 @@ def contact_view(request):
                 return HttpResponse('Invalid header found.')
                 
             
-            return redirect('login')
+            return redirect('post:index')
         
             
     else:
