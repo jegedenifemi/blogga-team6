@@ -139,9 +139,11 @@
   <!-- top green banner -->
 
   <div class="nav_outer">
-    <!-- <a href="./index.html"
-          ><img src="{% static './img/logo_resources/Favicon.png'%}" alt="Blogga Logo Icon"
-        /></a> -->
+    <a href="{% url 'post:index' %}"
+      ><img
+        src="{% static './img/logo_resources/Favicon.png'%}"
+        alt="Blogga Logo Icon"
+    /></a>
 
     <div class="nav_inner">
       <div class="hamburger">
@@ -214,11 +216,11 @@
         </div>
       </div>
 
-      <a href="{% url 'post:index' %}"
+      <!-- <a href="{% url 'post:index' %}"
         ><img
           src="{% static './img/logo_resources/Favicon.png'%}"
           alt="Blogga Logo Icon"
-      /></a>
+      /></a> -->
 
       <nav>
         <a href="{% url 'post:index' %}"

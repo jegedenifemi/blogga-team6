@@ -59,7 +59,8 @@ closeMenu.onclick = () => {
 
 // PASSWORD SHOW/HIDE   ||
 function passwordToggle() {
-  var x = document.getElementById("login-password");
+  // console.log("why");
+  var x = document.getElementById("password");
   if (x.type === "password") {
     x.type = "text";
     document.querySelector(".bi-eye").style.display = "none";

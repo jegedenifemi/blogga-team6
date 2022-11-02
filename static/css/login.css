@@ -67,6 +67,7 @@
   font-size: 19px;
   top: 0.6rem;
   right: 0.8rem;
+  cursor: pointer;
 }
 .head-txt {
   margin-bottom: 2rem;
