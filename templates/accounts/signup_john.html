@@ -44,7 +44,7 @@
       <div class="form-submit">
         <input type="submit" value="Sign up">
       </div>
-      <!-- Trying to debug this, it gets sent to the admin login  --
+       Trying to debug this, it gets sent to the admin login 
       {% if messages %}
       {% for message in messages %}
       {% if message.tags %}<div class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</div>
@@ -79,20 +79,37 @@
     />
     <link
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
     />
-    <link rel="stylesheet" href="{% static 'css/signup.css'%}" />
+    <link rel="stylesheet" href="{% static './css/signup.css'%}" />
     <title>Blog signup</title>
   </head>
   <body class="card">
-    <header>
+    <!-- <header>
       <div class="logo">
-        <img src="{% static 'img/Blogga.png'%}" alt="" />
+        <img src="{% static './img/Blogga.png'%}" alt="" />
       </div>
-    </header>
+    </header> -->
     <main>
       <div class="left-div">
-        <img src="{% static 'img/SignUpNo-BG.png'%}" width="" alt="" />
+        <img
+          src="{% static './img/Login/login_top_blob.png' %}"
+          alt="blob design "
+          class="top_blob"
+        />
+        <img src="{% static './img/signup_main_img.png'%}" width="" alt="Sign up image" />
+        <img
+          src="{% static './img/Login/login_bottom_blob.png'%}"
+          alt="blob design "
+          class="btm_blob"
+        />
       </div>
 
       <div class="right-div">
@@ -100,10 +117,10 @@
           <img src="{% static './img/Vector-left.png'%}" alt="" class="wave1" />
           <img src="{% static './img/Vector-right.png'%}" alt="" class="wave2" />
         </div>
-        <span class="close">&times;</span>
+        <i class="fa-solid fa-xmark" onclick="history.back()"></i>
         <div>
-          <h3 class="text-center mb-5">Welcome to Blogga</h3>
-          <div class="input-flex mt-5">
+          <h3 class="text-center">Welcome to Blogga</h3>
+          <div class="input-flex">
               <form method="post">
                   {% csrf_token %}
             <div>
@@ -114,7 +131,7 @@
             <div>
               <!-- <input type="text" placeholder="Last Name" class="input" /> -->
               {{form.last_name}}
-              <hr m-0 />
+              <hr/>
             </div>
           </div>
           <!-- <input type="email" placeholder="Email Address" class="input" /> -->
@@ -129,7 +146,8 @@
             <!-- <input type="password" placeholder="Password" class="input" /> -->
             {{form.password1}}
             <i class="bi bi-eye"></i>
-          </div><br />
+          </div>
+          <!-- <br /> -->
           <hr />
           <div class="password-eye">
               <!-- <input type="password" placeholder="Password" class="input" /> -->
@@ -137,19 +155,24 @@
               <i class="bi bi-eye"></i>
             </div>
           <hr class="hr-nomargin" />
-          <p class="input-rules"><small>Minimum of 8 characters</small></p>
-          <p class=""><small>special characters</small></p>
+          
+
+          {% if messages %}
+          {% for message in messages %}
+          {% if message.tags %}<div class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</div>
+          {% endfor %}
+          {% endif %}
+
+          <small class="input-rules">Minimum of 8 characters</small>
+          <small class="input-rules">special characters</small>
+
           <input type="checkbox" name="" id="" class="checkbox" />
-          <small
+          <small class="terms_main"
             >By signing up, you agree to our
             <a href="" class="terms">T & Cs</a> and
             <a href="" class="terms">Privacy Statement</a></small
           >
-          {% if messages %}
-        {% for message in messages %}
-        {% if message.tags %}<div class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</div>
-        {% endfor %}
-        {% endif %}
+         
           <!-- {% if messages %}
             <ul class="messages">
               {% for message in messages %}
@@ -158,7 +181,7 @@
           </ul>
           {% endif %} -->
           <br />
-          <button type="submit" class="my-3 mt-4 create-button">
+          <button type="submit" class="create-button ">
               <!-- <input type="submit" value="Sign up"> -->
             Create Account
           </button>
@@ -169,11 +192,11 @@
             <hr class="hr" />
           </div>
 
-          <button type="button" class="continue-button my-3">
+          <button type="button" class="continue-button ">
             <img src="{% static './img/google.png' %}" alt="" class="google" /> Continue With
             Google
           </button>
-          <h6 class="my-4 end-para">
+          <h6 class="end-para">
             Already a Blogga?
             <a href="{% url 'login' %}" class="login-link">Log in</a>
           </h6>
@@ -181,7 +204,7 @@
       </div>
     </main>
     <footer class="footer">
-      <img src="{% static 'img/Vector.png' %}" alt="" />
+      <img src="{% static './img/Vector.png' %}" alt="" />
     </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
