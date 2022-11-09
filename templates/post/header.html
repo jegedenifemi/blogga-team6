@@ -198,13 +198,12 @@
             {% else %}
 
             <button class="button">
-              <a href="{% url 'login' %}"> Sign In</a>
+              <a href="{% url 'login' %}" class="mobile_menu_login_link">
+                Sign In</a
+              >
             </button>
             {% endif %}
-            <button
-              class="subscribe button"
-              onclick="window.location.href='#subscribe';"
-            >
+            <button class="subscribe button" onclick="subscribeMobile()">
               Subscribe
             </button>
           </div>

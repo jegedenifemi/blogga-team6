@@ -364,8 +364,9 @@ header {
   font-weight: 400;
   padding: 0.5rem 1.5rem;
 }
-.mobile_menu_btns_wrap button > a {
+.mobile_menu_btns button > .mobile_menu_login_link {
   color: rgba(248, 248, 248, 1);
+  font-size: 19px !important;
 }
 .mobile_menu_btns_wrap img {
   width: 70px;

@@ -40,22 +40,31 @@ function showLoginModal() {
 
 // MOBILE MENU
 const menu = document.querySelector(".mobile_menu");
-const openMenu = document.querySelector(".hamburger");
-const closeMenu = document.querySelector(".hamburger_close");
+const openMenuBtn = document.querySelector(".hamburger");
+const closeMenuBtn = document.querySelector(".hamburger_close");
 
-openMenu.onclick = () => {
+openMenuBtn.onclick = () => {
   menu.classList.add("showMenu");
   document.querySelector(".mobile_search").style.display = "none";
-  openMenu.style.display = "none";
-  closeMenu.style.display = "block";
+  openMenuBtn.style.display = "none";
+  closeMenuBtn.style.display = "block";
 };
 
-closeMenu.onclick = () => {
+closeMenuBtn.onclick = () => {
   menu.classList.remove("showMenu");
   document.querySelector(".mobile_search").style.display = "block";
-  openMenu.style.display = "flex";
-  closeMenu.style.display = "none";
+  openMenuBtn.style.display = "flex";
+  closeMenuBtn.style.display = "none";
 };
+
+// MOBILE MENU SUBSCRIBE BUTTON ACTION
+function subscribeMobile() {
+  menu.classList.remove("showMenu");
+  document.querySelector(".mobile_search").style.display = "block";
+  openMenuBtn.style.display = "flex";
+  closeMenuBtn.style.display = "none";
+  window.location.href = "#subscribe";
+}
 
 // PASSWORD SHOW/HIDE   ||
 function passwordToggle() {
