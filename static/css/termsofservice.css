@@ -78,7 +78,28 @@ p {
   justify-content: space-between;
   align-content: space-evenly;
 }
-
+@media (max-width: 767px) {
+  .terms {
+    font-size: 30px;
+  }
+  .body {
+    width: 100%;
+    padding: 0;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-left: 0;
+    color: rgba(45, 45, 45, 1);
+    /* border-bottom: 1px solid rgba(45, 45, 45, 1); */
+  }
+  .ero {
+    padding: 30px 2rem;
+  }
+}
+@media (max-width: 535px) {
+  .ero {
+    padding: 30px 1rem;
+  }
+}
 /* .team{
     display: grid;
     grid-template-columns:repeat(8, 1fr) ;
