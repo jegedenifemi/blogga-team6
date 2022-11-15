@@ -1039,7 +1039,7 @@ header {
 
 @media screen and (max-width: 1500px) {
   .hero_right_card {
-    transform: scale(0.95, 0.95);
+    /* transform: scale(0.99, 0.99); */
   }
 }
 @media screen and (min-width: 1650px) {
@@ -1149,7 +1149,7 @@ header {
     gap: 1.6rem;
   }
   .trending_card_img {
-    transform: scale(0.95, 0.95);
+    /* transform: scale(0.99, 0.99); */
   }
 }
 @media screen and (orientation: landscape) and (min-width: 768px) {
