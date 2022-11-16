@@ -39,19 +39,19 @@ class PwdChangeForm(PasswordChangeForm):
 
     old_password = forms.CharField(
         label='Old Password', widget=forms.PasswordInput(
-            attrs={'class': 'form-control','placeholder':'Old Password','id': 'form-oldPassword'}
+            attrs={'class': 'form-control','type':'password','placeholder':'Old Password','id': 'form-oldPassword'}
         )
     )
 
     new_password1 = forms.CharField(
         label='New Password', widget=forms.PasswordInput(
-            attrs={'class': 'form-control','placeholder':'New Password','id': 'form-NewPassword'}
+            attrs={'class': 'form-control','type':'password','placeholder':'New Password','id': 'form-NewPassword'}
         )
     )
 
     new_password2 = forms.CharField(
         label='New Password 2', widget=forms.PasswordInput(
-            attrs={'class': 'form-control','placeholder':'Repeat new password','id': 'form-New2Password'}
+            attrs={'class': 'form-control','type':'password','placeholder':'Repeat new password','id': 'form-New2Password'}
         )
     )
 

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,13 +9,13 @@
     <!-- FAVICONS -->
     <link
       rel="shortcut icon"
-      href="./img/logo_resources/Favicon_White.png"
+      href="{% static './img/logo_resources/Favicon_White.png' %}"
       type="image/x-icon"
       id="fav-white"
     />
     <link
       rel="shortcut icon"
-      href="./img/logo_resources/Favicon.png"
+      href="{% static './img/logo_resources/Favicon.png' %}"
       type="image/x-icon"
       id="fav-green"
     />
@@ -45,9 +46,9 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/normalize.css" />
-    <link rel="stylesheet" href="./css/privacypolicy.css" />
+    <link rel="stylesheet" href="{% static './css/style.css' %}" />
+    <link rel="stylesheet" href="{% static './css/normalize.css' %}" />
+    <link rel="stylesheet" href="{% static './css/privacypolicy.css' %}" />
   </head>
   <body>
     <header>
@@ -76,7 +77,7 @@
       <div class="nav_outer">
 
         <a href="./index.html"
-          ><img src="./img/logo_resources/Favicon.png" alt="Blogga Logo Icon"
+          ><img src="{% static './img/logo_resources/Favicon.png' %}" alt="Blogga Logo Icon"
         /></a>
         
         <div class="nav_inner">
@@ -145,7 +146,7 @@
               </div>
 
               <img
-                src="./img/home_page/author_hamzy.png"
+                src="{% static './img/home_page/author_hamzy.png' %}"
                 alt="profile picture"
               />
             </div>
@@ -155,7 +156,7 @@
           <nav>
             <a href="./index.html"
               ><img
-                src="./img/logo_resources/Favicon_White.png"
+                src="{% static './img/logo_resources/Favicon_White.png' %}"
                 alt="Blogga Logo"
             /></a>
             <ul>
@@ -178,7 +179,7 @@
                   MORE
                   <span class="dropdown_arrow"
                     ><img
-                      src="./img/home_page/dropdown_arrow.png"
+                      src="{% static './img/home_page/dropdown_arrow.png' %}"
                       alt="dropdown"
                   /></span>
                 </label>
@@ -207,7 +208,7 @@
               Subscribe
             </button>
 
-            <img src="./img/home_page/author_hamzy.png" alt="profile picture" />
+            <img src="{% static './img/home_page/author_hamzy.png' %}" alt="profile picture" />
 
           </div>
         </div>
@@ -408,7 +409,7 @@
 
     <footer class="main_footer">
       <div class="footer_top">
-        <img src="./img/logo_resources/Favicon_White.png" alt="Blogga Icon" />
+        <img src="{% static './img/logo_resources/Favicon_White.png' %}" alt="Blogga Icon" />
         <ul>
           <li><a href="#">ADVERTISE</a></li>
           <li><a href="#">WRITE FOR US</a></li>
@@ -416,7 +417,7 @@
           <li>
             <a href="./index.html"
               ><img
-                src="./img/logo_resources/Favicon_White.png"
+                src="{% static './img/logo_resources/Favicon_White.png' %}"
                 alt="Blogga Icon"
             /></a>
           </li>
@@ -458,6 +459,6 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
     <!-- Initialize Swiper -->
-    <script src="./index.js"></script>
+    <script src="{% static './index.js' %}"></script>
   </body>
 </html>

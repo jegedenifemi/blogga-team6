@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Post, Category
-from .forms import PostForm,CommentForm
+from post.forms import PostForm,CommentForm
 from django.contrib import messages
 from django.urls import reverse
 from django.http import HttpResponse, HttpResponseRedirect
@@ -151,11 +151,11 @@ def archive_view(request):
 
 def team_view(request):
 
-    return render(request, 'raw/ourteam.html')
+    return render(request, 'raw/ourteam.html', {})
 
 def privacy_view(request):
 
-    return render(request, 'raw/privavypolicy.html')
+    return render(request, 'raw/privacypolicy.html')
 
 def profile_view(request):
 
@@ -168,6 +168,7 @@ def terms_view(request):
     return render(request, 'raw/termsofservice.html')
 
 
-def funcname(request):
-    pass
+def write(request):
+    return render(request, 'raw/write-for-us.html')
+
    

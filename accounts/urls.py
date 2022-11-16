@@ -9,6 +9,7 @@ urlpatterns = [
     path('signup/', views._sign_up, name = 'signup'),
     path('password-change/', auth_views.PasswordChangeView.as_view(template_name='accounts/pwd_changeform.html',
                                                 form_class =PwdChangeForm), name = 'pwdchange'),
+    path('password-change/done/',auth_views.PasswordChangeDoneView.as_view(template_name='accounts/password_change_done.html'),name='password_change_done'),
     path('password-reset/',views.password_reset_request,name='password_reset'),
     path('password-reset/done/',auth_views.PasswordResetDoneView.as_view(template_name='accounts/password_reset_done.html'),name='password_reset_done'),
     path('password-reset-confirm/<uidb64>/<token>/',auth_views.PasswordResetConfirmView.as_view(template_name='accounts/password_reset_confirm.html'),name='password_reset_confirm'),

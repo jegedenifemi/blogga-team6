@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,13 +8,13 @@
     <title>Blogga|our team</title>
     <link
     rel="shortcut icon"
-    href="./img/logo_resources/Favicon_White.png"
+    href="{% static './img/logo_resources/Favicon_White.png' %}"
     type="image/x-icon"
     id="fav-white"
   />
   <link
   rel="shortcut icon"
-  href="./img/logo_resources/Favicon.png"
+  href="{% static './img/logo_resources/Favicon.png' %}"
   type="image/x-icon"
   id="fav-green"
  />
@@ -36,8 +37,8 @@
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
   />
-    <link rel="stylesheet" href="ourteam.css" />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="{% static './css/ourteam.css' %}" />
+    <link rel="stylesheet" href="{% static './css/style.css' %}" />
 
 </head>
 <body>
@@ -110,7 +111,7 @@
     </div>
 
     <div class="nav_outer">
-      <img src="./img/logo_resources/Favicon.png" alt="Blogga Logo" />
+      <img src="{% static './img/logo_resources/Favicon.png' %}" alt="Blogga Logo" />
 
       <div class="nav_inner">
         <div class="hamburger">
@@ -120,7 +121,7 @@
 
         <nav>
           <img
-            src="./img/logo_resources/Favicon_White.png"
+            src="{% static './img/logo_resources/Favicon_White.png' %}"
             alt="Blogga Logo"
           />
           <ul>
@@ -163,7 +164,7 @@
         <div class="banner_left">
           <p>Have a story to share?</p>
 
-          <button onclick="window.location.href='./contact-us.html';">
+          <button type = "submit" onclick="window.location.href='{% url 'contact' %}'">
             Contact Us
           </button>
         </div>
@@ -183,7 +184,7 @@
 
     <div class="nav_outer">
       <!-- <a href="./index.html"
-        ><img src="./img/logo_resources/Favicon.png" alt="Blogga Logo Icon"
+        ><img src="{% static './img/logo_resources/Favicon.png' %}" alt="Blogga Logo Icon"
       /></a> -->
 
       <div class="nav_inner">
@@ -254,20 +255,20 @@
             </div>
 
             <img
-              src="./img/home_page/author_hamzy.png"
+              src="{% static './img/home_page/author_hamzy.png' %}"
               alt="profile picture"
             />
           </div>
         </div>
 
         <a href="./index.html"
-          ><img src="./img/logo_resources/Favicon.png" alt="Blogga Logo Icon"
+          ><img src="{% static './img/logo_resources/Favicon.png' %}" alt="Blogga Logo Icon"
         /></a>
 
         <nav>
           <a href="./index.html"
             ><img
-              src="./img/logo_resources/Favicon_White.png"
+              src="{% static './img/logo_resources/Favicon_White.png' %}"
               alt="Blogga Logo"
           /></a>
           <ul>
@@ -292,7 +293,7 @@
                 MORE
                 <span class="dropdown_arrow"
                   ><img
-                    src="./img/home_page/dropdown_arrow.png"
+                    src="{% static './img/home_page/dropdown_arrow.png' %}"
                     alt="dropdown"
                 /></span>
               </label>
@@ -320,7 +321,7 @@
             Subscribe
           </button>
 
-          <img src="./img/home_page/author_hamzy.png" alt="profile picture" />
+          <img src="{% static './img/home_page/author_hamzy.png' %}" alt="profile picture" />
         </div>
       </div>
     </div>
@@ -333,12 +334,12 @@
     <div class="team">
           <div class="bend">
             <div class="img">
-                <img src="img/Ellipse_3.png" alt="" class="john">
+                <img src="{% static 'img/Ellipse_3.png' %}" alt="" class="john">
                 <p class="name">Afariogun John</p>
                 <p class="work">Backend developer</p>
             </div>
             <div class="img">
-                <img src="img/Ellipse_2.png" alt="">
+                <img src="{% static 'img/Ellipse_2.png' %}" alt="">
                 <p class="name">
                     Odulaja Philp
                 </p>
@@ -349,42 +350,42 @@
         </div>
         <div class="fend">
                 <div class="img">
-                    <img src="img/Ellipse_(22).png" alt="" class="nife">
+                    <img src="{% static 'img/Ellipse_(22).png' %}" alt="f" class="nife">
                     <p class="name">Jegede Oluwanifemi</p>
                     <p class="work">Frontend Developer </p>
                 </div>
                 <div class="img">
-                    <img src="img/Ellipse_2_(23).png" alt="" class="racheal">
+                    <img src="{% static 'img/Ellipse_2_(23).png' %}" alt="" class="racheal">
                     <p class="name">Ezeh Chika Racheal</p>
                     <p class="work">Frontend Developer </p>
                 </div>
                 <div class="img">
-                    <img src="img/Ellipse_2_(18).png" alt="" class="amara">
+                    <img src="{% static 'img/Ellipse_2_(18).png' %}" alt="" class="amara">
                     <p class="name">Onwunzo Amara</p>
                     <p class="work">Frontend Developer </p>
                 </div><div class="img">
-                    <img src="img/Ellipse_2_(15).png" alt="">
+                    <img src="{% static 'img/Ellipse_2_(15).png' %}" alt="">
                     <p class="name">Taofikat Oyedepo</p>
                     <p class="work">Frontend Developer </p>
                 </div>
         </div>
         <div class="fend">
                 <div class="img">
-                    <img src="img/Ellipse_2_(24).png" alt="" class="nino">
+                    <img src="{% static 'img/Ellipse_2_(24).png' %}" alt="" class="nino">
                     <p class="name">Adava Oluwatobi</p>
                     <p class="work">Frontend Developer </p>
                 </div><div class="img">
-                    <img src="img/Ellipse_2_(16).png" alt="" class="tlams">
+                    <img src="{% static 'img/Ellipse_2_(16).png' %}" alt="" class="tlams">
                     <p class="name">Oluwatosin Oyelami</p>
                     <p class="work">Frontend Developer </p>
                 </div>
                 <div class="img">
-                    <img src="img/Ellipse_2.png" alt="">
+                    <img src="{% static 'img/Ellipse_2.png' %}" alt="">
                     <p class="name">Ibikunle Temitope  </p>
                     <p class="work">Frontend Developer </p>
                   </div>
                     <div class="img">
-                        <img src="img/Ellipse_2.png"alt="">
+                        <img src="{% static 'img/Ellipse_2.png' %}"alt="">
                         <p class="name">Maverick
                         </p>
                         <p class="work">
@@ -394,13 +395,13 @@
         </div>
                     <div class="pdesign">
                     <div class="img">
-                            <img src="img/Ellipse_2.png" alt="">
+                            <img src="{% static 'img/Ellipse_2.png' %}" alt="">
                             <p class="name">Hamzah Opemipo</p>
                             <p class="work">
                                 Product Designer </p>
                         </div>
                         <div class="img">
-                            <img src="img/Ellipse_2_(21).png" alt="" class="dotun">
+                            <img src="{% static 'img/Ellipse_2_(21).png' %}" alt="" class="dotun">
                             <p class="name">
                                 Adedotun Solarin
                             </p>
@@ -432,14 +433,14 @@
   </section>
   <footer class="main_footer">
     <div class="footer_top">
-       <img src="./img/logo_resources/Favicon_White.png" alt="Blogga Icon" /> -->
+       <img src="{% static './img/logo_resources/Favicon_White.png' %}" alt="Blogga Icon" /> -->
      <!-- <ul>
         <li>ADVERTISE</li>
         <li>WRITE FOR US</li>
         <li>CATEGORIES</li>
         <li>
           <img
-            src="./img/logo_resources/Favicon_White.png"
+            src="{% static './img/logo_resources/Favicon_White.png' %}"
             alt="Blogga Icon"
           />
         </li>
@@ -498,7 +499,7 @@
 
 <footer class="main_footer">
   <div class="footer_top">
-    <img src="./img/logo_resources/Favicon_White.png" alt="Blogga Icon" />
+    <img src="{% static './img/logo_resources/Favicon_White.png' %}" alt="Blogga Icon" />
     <ul>
       <li><a href="#">ADVERTISE</a></li>
       <li><a href="./write-for-us.html">WRITE FOR US</a></li>
@@ -506,7 +507,7 @@
       <li>
         <a href="./index.html"
           ><img
-            src="./img/logo_resources/Favicon_White.png"
+            src="{% static './img/logo_resources/Favicon_White.png' %}"
             alt="Blogga Icon"
         /></a>
       </li>

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,13 +10,13 @@
     <!-- FAVICONS -->
     <link
       rel="shortcut icon"
-      href="./img/logo_resources/Favicon_White.png"
+      href="{% static './img/logo_resources/Favicon_White.png' %}"
       type="image/x-icon"
       id="fav-white"
     />
     <link
       rel="shortcut icon"
-      href="./img/logo_resources/Favicon.png"
+      href="{% static './img/logo_resources/Favicon.png' %}"
       type="image/x-icon"
       id="fav-green"
     />
@@ -42,10 +43,10 @@
     />
 
     <!-- STYLESHEETS -->
-    <link rel="stylesheet" href="./css/write-for-us.css" />
-    <link rel="stylesheet" href="./css/contact-us.css" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/login.css" />
+    <link rel="stylesheet" href="{% static './css/write-for-us.css' %}" />
+    <link rel="stylesheet" href="{% static './css/contact-us.css' %}" />
+    <link rel="stylesheet" href="{% static './css/style.css' %}" />
+    <link rel="stylesheet" href="{% static './css/login.css' %}" />
   </head>
   <body class="contact_body">
     <!-- LOGIN MODAL STARTS HERE -->
@@ -53,17 +54,17 @@
     <div class="login-modal">
       <section class="login-body">
         <img
-          src="./img/Login/mobile_blob1.png"
+          src="{% static './img/Login/mobile_blob1.png' %}"
           alt="mobile blob design"
           class="mobile_blob1"
         />
         <img
-          src="./img/Login/mobile_blob2.png"
+          src="{% static './img/Login/mobile_blob2.png' %}"
           alt="mobile blob design"
           class="mobile_blob2"
         />
         <img
-          src="./img/Login/mobile_blob3.png"
+          src="{% static './img/Login/mobile_blob3.png' %}"
           alt="mobile blob design"
           class="mobile_blob3"
         />
@@ -71,13 +72,13 @@
         <main class="login-main">
           <div class="left-div">
             <img
-              src="./img/Login/login_top_blob.png"
+              src="{% static './img/Login/login_top_blob.png' %}"
               alt="blob design "
               class="top_blob"
             />
-            <img src="./img/Login/login_main_image.png" alt="welcome image" />
+            <img src="{% static './img/Login/login_main_image.png' %}" alt="welcome image" />
             <img
-              src="./img/Login/login_bottom_blob.png"
+              src="{% static './img/Login/login_bottom_blob.png' %}"
               alt="blob design "
               class="btm_blob"
             />
@@ -122,7 +123,7 @@
               </div>
 
               <button type="button" class="continue-button">
-                <img src="img/google.png" alt="" class="google" /> &nbsp;
+                <img src="{% static './img/Login/login_bottom_blob.png' %}" alt="" class="google" /> &nbsp;
                 Continue With Google
               </button>
 
@@ -163,7 +164,7 @@
 
       <div class="nav_outer">
         <a href="./index.html"
-          ><img src="./img/logo_resources/Favicon.png" alt="Blogga Logo Icon"
+          ><img src="{% static './img/logo_resources/Favicon.png' %}" alt="Blogga Logo Icon"
         /></a>
 
         <div class="nav_inner">
@@ -233,7 +234,7 @@
               </div>
 
               <img
-                src="./img/home_page/author_hamzy.png"
+                src="{% static './img/home_page/author_hamzy.png' %}"
                 alt="profile picture"
               />
             </div>
@@ -242,7 +243,7 @@
           <nav>
             <a href="./index.html"
               ><img
-                src="./img/logo_resources/Favicon_White.png"
+                src="{% static './img/logo_resources/Favicon_White.png' %}"
                 alt="Blogga Logo"
             /></a>
             <ul>
@@ -265,7 +266,7 @@
                   MORE
                   <span class="dropdown_arrow"
                     ><img
-                      src="./img/home_page/dropdown_arrow.png"
+                      src="{% static './img/home_page/dropdown_arrow.png' %}"
                       alt="dropdown"
                   /></span>
                 </label>
@@ -294,7 +295,7 @@
               Subscribe
             </button>
 
-            <img src="./img/home_page/author_hamzy.png" alt="profile picture" />
+            <img src="{% static './img/home_page/author_hamzy.png' %}" alt="profile picture" />
           </div>
         </div>
       </div>
@@ -385,7 +386,7 @@
 
     <footer class="main_footer">
       <div class="footer_top">
-        <img src="./img/logo_resources/Favicon_White.png" alt="Blogga Icon" />
+        <img src="{% static './img/logo_resources/Favicon_White.png' %}" alt="Blogga Icon" />
         <ul>
           <li><a href="#">ADVERTISE</a></li>
           <li><a href="./write-for-us.html">WRITE FOR US</a></li>
@@ -393,7 +394,7 @@
           <li>
             <a href="./index.html"
               ><img
-                src="./img/logo_resources/Favicon_White.png"
+                src="{% static './img/logo_resources/Favicon_White.png' %}"
                 alt="Blogga Icon"
             /></a>
           </li>
@@ -431,6 +432,6 @@
       </div>
     </footer>
 
-    <script src="./index.js"></script>
+    <script src="{% static './index.js' %}"></script>
   </body>
 </html>

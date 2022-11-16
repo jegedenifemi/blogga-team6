@@ -146,6 +146,8 @@ def _log_out(request):
     logout(request)
     return redirect('post:index')
 
+# def pass_word_email(request):
+#     return render(request, 'accounts/checkEmail.html',{})
 
 def password_reset_request(request):
 	if request.method == "POST":
