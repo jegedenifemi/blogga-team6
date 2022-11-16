@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Blogga | Post</title>
     <script src="https://kit.fontawesome.com/c751151e16.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/c751151e16.js" crossorigin="anonymous"></script>
     {% block stylesheet %}
@@ -20,6 +20,20 @@
 <link
 href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
 rel="stylesheet"
+/>
+
+<!-- FAVICONS -->
+<link
+rel="shortcut icon"
+href="{% static './img/logo_resources/Favicon_White.png'%}"
+type="image/x-icon"
+id="fav-white"
+/>
+<link
+rel="shortcut icon"
+href="{% static './img/logo_resources/Favicon.png'%}"
+type="image/x-icon"
+id="fav-green"
 />
 </head>
 <body>
@@ -347,15 +361,8 @@ rel="stylesheet"
       </div>
     </footer>
 
-    
-
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
     <!-- Initialize Swiper -->
     <script src="{% static './js/index.js' %}"></script>
-
-   
 </body>
 </html>
 <!-- <!DOCTYPE html>
