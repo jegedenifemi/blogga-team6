@@ -15,6 +15,7 @@ urlpatterns = [
     path('bookmarks/', views.bookmarks, name = 'bookmarks'),
     path('archive/', views.archive_view, name='archive'),
     path('our-team/', views.team_view, name='our-team'),
+    path('news/', views.news, name='news'),
     path('privacy-policy/', views.privacy_view, name ='privacy-policy'),
     path('profile/',auth_views.PasswordChangeView.as_view(template_name='raw/profilepage.html',
                                                 form_class =PwdChangeForm), name='profile'),

@@ -161,7 +161,17 @@ def profile_view(request):
 
     return render(request, 'raw/profilepage.html')
 
+def news(request):
+    posts = Post.objects.filter(status='published').order_by('-publish_on')
+    common_tags = Post.tags.most_common()[:4]
 
+    context = {
+        'posts': posts,
+        'common_tags': common_tags
+    }
+ 
+
+    return render(request, 'post/news.html', context)
 
 def terms_view(request):
 

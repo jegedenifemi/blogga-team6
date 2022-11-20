@@ -62,7 +62,7 @@ class ContactForm(forms.Form):
             attrs={'class': '', 'id' :'contact_fname','placeholder':'FIRST NAME'}
     )) 
     last_name = forms.CharField(max_length = 300,required = True,label='',widget= forms.TextInput(
-        attrs={'class': '', 'contact_lname' :'','placeholder':'LAST NAME'}
+        attrs={'class': '', 'id':'contact_lname','placeholder':'LAST NAME'}
     )) 
     email = forms.EmailField(required = True,label='',widget= forms.EmailInput(
         attrs={'class': '', 'id' :'contact_email','placeholder':'email@email.com'}
@@ -71,3 +71,32 @@ class ContactForm(forms.Form):
         attrs={'rows':10, 'cols':30,'class': '', 'id' :'contact_message','placeholder':'Your Message'}
     )) 
 
+class WriteForUsForm(forms.Form):
+    """
+    write for us form collects the inout and sends it as a mail for now
+    """
+    
+    first_name = forms.CharField(max_length = 300, required = True, label='', 
+        widget = forms.TextInput(attrs= 
+        {
+            'class':'',
+            'id':"write4us_fname",
+            "placeholder" :"FIRST NAME"
+        })
+    ) 
+    last_name = forms.CharField(max_length = 300,required = True,label='',
+    widget= forms.TextInput(
+        attrs={'class': '', 'id':'write4us_lname','placeholder':'LAST NAME'}
+    )) 
+
+    email = forms.EmailField(required = True,label='',widget= forms.EmailInput(
+        attrs={'class': '', 'id' :'wite4us_email','placeholder':'email@email.com'}
+    )) 
+
+
+    bio = forms.CharField(required = True, label='', widget = forms.Textarea(
+        attrs = {'class':'', 'id': 'write4us_bio', 'cols':30,
+        'rows':10,'placeholder': 'BIO',
+    'style':'resize:none;'        
+        }
+    ))

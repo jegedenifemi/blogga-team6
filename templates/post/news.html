@@ -1,22 +1,23 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blogga | News</title>
-    <link rel="stylesheet" href="css/category-page.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{% static 'css/category-page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- FAVICONS -->
     <link
       rel="shortcut icon"
-      href="./img/logo_resources/Favicon_White.png"
+      href="{% static './img/logo_resources/Favicon_White.png' %}"
       type="image/x-icon"
       id="fav-white"
     />
     <link
       rel="shortcut icon"
-      href="./img/logo_resources/Favicon.png"
+      href="{% static './img/logo_resources/Favicon.png' %}"
       type="image/x-icon"
       id="fav-green"
     />
@@ -68,7 +69,7 @@
 
       <div class="nav_outer">
         <!-- <a href="./index.html"
-          ><img src="./img/logo_resources/Favicon.png" alt="Blogga Logo Icon"
+          ><img src="{% static './img/logo_resources/Favicon.png' %}" alt="Blogga Logo Icon"
         /></a> -->
 
         <div class="nav_inner">
@@ -140,20 +141,20 @@
               </div>
 
               <img
-                src="./img/home_page/author_hamzy.png"
+                src="{% static './img/home_page/author_hamzy.png' %}"
                 alt="profile picture"
               />
             </div>
           </div>
 
           <a href="./index.html"
-            ><img src="./img/logo_resources/Favicon.png" alt="Blogga Logo Icon"
+            ><img src="{% static './img/logo_resources/Favicon.png' %}" alt="Blogga Logo Icon"
           /></a>
 
           <nav>
             <a href="./index.html"
               ><img
-                src="./img/logo_resources/Favicon_White.png"
+                src="{% static './img/logo_resources/Favicon_White.png' %}"
                 alt="Blogga Logo"
             /></a>
             <ul>
@@ -178,7 +179,7 @@
                   MORE
                   <span class="dropdown_arrow"
                     ><img
-                      src="./img/home_page/dropdown_arrow.png"
+                      src="{% static './img/home_page/dropdown_arrow.png' %}"
                       alt="dropdown"
                   /></span>
                 </label>
@@ -206,7 +207,7 @@
               Subscribe
             </button>
 
-            <img src="./img/home_page/author_hamzy.png" alt="profile picture" />
+            <img src="{% static './img/home_page/author_hamzy.png' %}" alt="profile picture" />
           </div>
         </div>
       </div>
@@ -229,28 +230,49 @@
       <section class="main-content">
          <!-- LEFT SECTION STARTS CONTENT 1-->
          <div>
+           
+           {% for post in posts %}
+             
+        
+             
          <div class="left-section">
           <div class="left-image">
-            <a href=""><img src="img/Reactions-to-davido.svg" alt="lord-of-rings-img"></a>
+            <!-- <a href=""><img src="{% static 'img/Reactions-to-davido.svg' %}" alt="lord-of-rings-img"></a> -->
+            <a href="{% url 'post:post_detail' post.slug %}">
+              <img src="{{post.image.url}}" alt="{{post.title}}" class="img_zoom"
+            /></a>
+
           </div>
           <div class="left-content">
-            <a href="">Reactions as Davido strutted the Puma runway at <br> New York fashion week</a>
-
-                <p>Afrobeat sensation, Davido walked the runway of Puma at the New York fashion week.</p>
+              <a
+                  href="{% url 'post:post_detail' post.slug %}"
+                  class="post_title"
+                  ><h3>{{post.title}}</h3></a
+                >
+            <!-- <a href="">Reactions as Davido strutted the Puma runway at <br> New York fashion week</a> -->
+                
+                {% if post.description %}
+                  <p>{{post.description}}</p>
+                  {% else %}
+              <!-- this needs some finetuning cause it coounts space as a characters -->
+                  <p>  {{post.contents | safe | truncatechars:200}}</p>
+                {% endif %}
+                  
+                
                  <div class="read-more-section">
-                    <a href="" id="right-arrow"
+                    <a href="{% url 'post:post_detail' post.slug %}" id="right-arrow"
                       >READ MORE <i class="fa-sharp fa-solid fa-arrow-right"></i
                     ></a>
                   </div>
           </div>
             <hr class="hr-line"/>
          </div>
-
+         {% endfor %}
          <!-- LEFT SECTION STARTS CONTENT 2-->
-
+<!-- 
          <div class="left-section">
             <div class="left-image">
-              <a href=""><img src="img/London.svg" alt="lord-of-rings-img"></a>
+              <a href=""><img src="{% static 'img/Reactions-to-davido.svg' %}" alt="lord-of-rings-img"></a>
             </div>
             <div class="left-content">
               <a href="">London Fashion Week kicks off with tributes to<br> Queen Elizabeth</a>
@@ -268,7 +290,7 @@
 
          <div class="left-section">
             <div class="left-image">
-              <a href=""><img src="img/Burberry.svg" alt="lord-of-rings-img"></a>
+              <a href=""><img src="{% static './img/Burberry.svg' %}" alt="lord-of-rings-img"></a>
             </div>
             <div class="left-content">
 
@@ -288,7 +310,7 @@
 
          <div class="left-section">
             <div class="left-image">
-              <a href=""><img src="img/Paid-price.svg" alt="lord-of-rings-img"></a>
+              <a href=""><img src="{% static 'img/Paid-price.svg' %}" alt="lord-of-rings-img"></a>
             </div>
             <div class="left-content">
 
@@ -308,7 +330,7 @@
 
          <div class="left-section">
             <div class="left-image">
-              <a href=""><img src="img/With-tradition.svg" alt="lord-of-rings-img"></a>
+              <a href=""><img src="{% static 'img/With-tradition.svg' %}" alt="lord-of-rings-img"></a>
             </div>
             <div class="left-content">
 
@@ -328,7 +350,7 @@
 
          <div class="left-section">
             <div class="left-image">
-              <a href=""><img src="img/From-black.svg" alt="lord-of-rings-img"></a>
+              <a href=""><img src="{% static 'img/From-black.svg' %}" alt="lord-of-rings-img"></a>
             </div>
             <div class="left-content">
               <a href="">From black hats to brooches, funeral guests wear quiet tributes to the Queen</a>
@@ -348,7 +370,7 @@
 
          <div class="left-section">
             <div class="left-image">
-              <a href=""><img src="img/Ojuju-bail.svg" alt="lord-of-rings-img"></a>
+              <a href=""><img src="{% static 'img/Ojuju-bail.svg' %}" alt="lord-of-rings-img"></a>
             </div>
             <div class="left-content">
               <a href="">Ojuju Ball: Our favorite and least favorite looks</a>
@@ -367,7 +389,7 @@
 
          <div class="left-section">
             <div class="left-image">
-              <a href=""><img src="img/Jamie-Clayton.svg" alt="lord-of-rings-img"></a>
+              <a href=""><img src="{% static 'img/Jamie-Clayton.svg' %}" alt="lord-of-rings-img"></a>
             </div>
             <div class="left-content">
             <a>Jamie Clayton's Pinhead promises very painful 'delights' in Hellraiser trailer </a>
@@ -385,7 +407,7 @@
 
          <div class="left-section">
             <div class="left-image">
-              <a href=""><img src="img/Pete-Davidson.svg" alt="lord-of-rings-img"></a>
+              <a href=""><img src="{% static 'img/Pete-Davidson.svg' %}" alt="lord-of-rings-img"></a>
             </div>
             <div class="left-content">
               <a href="">Pete Davidson and Kaley Cuoco go on their first date (again and again) in Meet Cute trailer</a>
@@ -403,7 +425,7 @@
 
          <div class="left-section">
             <div class="left-image">
-              <a href=""><img src="img/Daniel-Craig.svg" alt="lord-of-rings-img"></a>
+              <a href=""><img src="{% static 'img/Daniel-Craig.svg' %}" alt="lord-of-rings-img"></a>
             </div>
             <div class="left-content">
               <a href="">Daniel Craig peels back the layers of a mystery in first Glass Onion: A Knives Out Mystery teaser</a>
@@ -416,7 +438,7 @@
             </div>
            </div>
 
-         </div>
+         </div> -->
 
         <!-- LEFT SECTION ENDS -->
 
@@ -722,7 +744,7 @@
              <hr class="category-hr"/>
 
              <div class="page-num-content">
-                <a href="#" class="page-btn start-page"><img src="img/less-than.svg" alt=""></a>
+                <a href="#" class="page-btn start-page"><img src="{% static 'img/less-than.svg' %}" alt=""></a>
                 <a href="#" class="page-btn">1</a>
                 <a href="#" class="page-btn prev-page">...</a>
                 <a href="#" class="page-btn">6</a>
@@ -736,7 +758,7 @@
                 <a href="" class="page-btn" id="hide">14</a>
                 <a href="" class="page-btn next-page" id="hide">...</a>
                 <a href="" class="page-btn" id="hide">458</a>
-                <a href="" class="page-btn end-page"><img src="img/Greater-than.svg" alt=""></a> &nbsp;  &nbsp;
+                <a href="" class="page-btn end-page"><img src="{% static 'img/Greater-than.svg' %}" alt=""></a> &nbsp;  &nbsp;
              </div>
         </section>
 
@@ -775,7 +797,7 @@
     <!--  -->
     <footer class="main_footer">
       <div class="footer_top">
-        <img src="./img/logo_resources/Favicon_White.png" alt="Blogga Icon" />
+        <img src="{% static './img/logo_resources/Favicon_White.png' %}" alt="Blogga Icon" />
         <ul>
           <li><a href="#">ADVERTISE</a></li>
           <li><a href="./write-for-us.html">WRITE FOR US</a></li>
@@ -783,7 +805,7 @@
           <li>
             <a href="./index.html"
               ><img
-                src="./img/logo_resources/Favicon_White.png"
+                src="{% static './img/logo_resources/Favicon_White.png' %}"
                 alt="Blogga Icon"
             /></a>
           </li>
@@ -822,7 +844,7 @@
     </footer>
     <!--  -->
     <!-- FOOTER END-->
-    <script src="category.js"></script>
-    <script src="./index.js"></script>
+    <script src="{% static './js/category.js' %}"></script>
+    <script src="{% static './js/index.js' %}"></script>
   </body>
 </html>

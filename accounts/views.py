@@ -66,17 +66,17 @@ def _sign_up(request):
                 }
                 email = render_to_string(email_template_name, c)
                 to_email = form.cleaned_data.get('email')
-                try:
-                    send_mail(subject, email, 'afariogun.john2002@gmail.com' , [to_email], fail_silently=False)
-                except BadHeaderError:
-                    return HttpResponse('Invalid header found.')
+                # try:
+                #     send_mail(subject, email, 'afariogun.john2002@gmail.com' , [to_email], fail_silently=False)
+                # except BadHeaderError:
+                #     return HttpResponse('Invalid header found.')
 					
                 
-                return redirect('login')
+                return redirect('verification')
             
             
         else:
-            # form = CreateUserForm
+            form = CreateUserForm
             # messages.error(request, "Username or Password is incorrect")
             messages.error(request,'Please enter valid credentials')
         context = {'form': form}
@@ -140,7 +140,9 @@ def  _log_modal(request):
 
     return render(request, 'post/login_modal.html', context)
 
+def verification(request):
 
+    return render(request, 'accounts/verification.html', {})
 @login_required()
 def _log_out(request):
     logout(request)
@@ -205,4 +207,6 @@ def contact_view(request):
         form = ContactForm
     context = {'form': form}
     return render(request, 'accounts/contact-us.html', context)
+
+
 
