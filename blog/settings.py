@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 # from dotenv import load_dotenv
 import dj_database_url
 from pathlib import Path
-import django_heroku
+# import django_heroku
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,8 +31,8 @@ SECRET_KEY = '73siuk@n$yr&)_kg-bnu_t)ed=+q)*n7iq3s-s*snqrr3h9h!&'
 DEBUG = True
 # DEBUG = False
 
-ALLOWED_HOSTS = ['web-production-c906.up.railway.app','blogga.up.railway.app','127.0.0.1']
-CSRF_TRUSTED_ORIGINS= ['https://web-production-c906.up.railway.app','https://blogga.up.railway.app', 'http://127.0.0.1']
+ALLOWED_HOSTS = ['web-production-c906.up.railway.app','blogga.up.railway.app','afariogunjohn.pythonanywhere.com','127.0.0.1']
+CSRF_TRUSTED_ORIGINS= ['https://web-production-c906.up.railway.app','https://blogga.up.railway.app', 'http://afariogunjohn.pythonanywhere.com','http://127.0.0.1']
 # CORS_ALLOWED_ORIGINS =  ['web-production-c906.up.railway.app',"http://localhost:8080",
 #     "http://127.0.0.1:9000",]
 # Application definition
@@ -92,19 +92,27 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.sqlite3',
-       'NAME': BASE_DIR / 'db.sqlite3',
-   }
-}
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+# }
 # DATABASE_URL = os.getenv("DATABASE_URL")
 # DATABASE_URL = 'postgresql://postgres:63aXtIZo1cPMZMLpk569@containers-us-west-96.railway.app:6686/railway'
 # DATABASES ={
 #     'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
 # }
 
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'afariogunjohn$blogga',
+        'USER': 'afariogunjohn',
+        'PASSWORD': 'DquF@_gKyWv24Df',
+        'HOST': 'afariogunjohn.mysql.pythonanywhere-services.com',
+    }
+}
 
 #DATABASES ={
 #    'default': dj_database_url.config()
