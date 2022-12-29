@@ -313,54 +313,7 @@ id="fav-green"
         </form>
       </section>
     </main>
-
-    <footer class="main_footer">
-      <div class="footer_top">
-        <img src="{% static './img/logo_resources/Favicon_White.png' %}" alt="Blogga Icon" />
-        <ul>
-          <li>ADVERTISE</li>
-          <li>WRITE FOR US</li>
-          <li>CATEGORIES</li>
-          <li>
-            <img
-              src="{% static './img/logo_resources/Favicon_White.png' %}"
-              alt="Blogga Icon"
-            />
-          </li>
-          <li>ARCHIVES</li>
-          <li>TERMS OF SERVICE</li>
-          <li>PRIVACY</li>
-        </ul>
-      </div>
-
-      <div class="footer_middle">
-        <a href="#">
-          <i class="fa-brands fa-facebook"></i>&ThinSpace;
-          <span>FACEBOOK</span> </a
-        ><a href="#"
-          ><i class="fa-brands fa-twitter"></i>&ThinSpace;
-          <span>TWITTER</span> </a
-        ><a href="#"
-          ><i class="fa-brands fa-linkedin-in"></i>&ThinSpace;
-          <span>LINKEDIN</span> </a
-        ><a href="#"
-          ><i class="fa-brands fa-youtube"></i>&ThinSpace;
-          <span>YOUTUBE</span></a
-        ><a href="#"
-          ><i class="fa-brands fa-instagram"></i>&ThinSpace;
-          <span>INSTAGRAM</span> </a
-        ><a href="#"
-          ><i class="fa-brands fa-pinterest"></i>&ThinSpace;
-          <span>PINTEREST</span>
-        </a>
-      </div>
-
-      <div class="footer_bottom">
-        <p>© 2022 The Blogga Team All Rights Reserved</p>
-        <a href="#">Site Map</a>
-      </div>
-    </footer>
-
+{% include "post/footer.html" %}
     <!-- Initialize Swiper -->
     <script src="{% static './js/index.js' %}"></script>
 </body>
